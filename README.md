@@ -1,5 +1,5 @@
 # genpwd
-Password manager which does not store passwords.
+A password manager (?) which does not store your passwords on disk and provides plausible deniability.
 
 ## Dependencies
 * Python 3.x
