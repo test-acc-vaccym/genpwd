@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 
-import os, os.path, hashlib, getpass
+import sys, shutil, os, os.path, hashlib, getpass
 
 ALPHABET = "123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ"
 BASE_COUNT = len(ALPHABET)
 SECRET_FILE = os.path.expanduser("~/.genpwd")
+INSTALL_PATH = "~/.local/bin/"
 DEFAULT_PWD_LENGTH = 14 # Length of password
 
 def get_random_base():
@@ -64,5 +65,24 @@ def run():
     password = normalize_password(pre_password)
     print(password)
 
+# installs genpwd to ~/.local/bin/genpwd
+def install():
+    PATH = os.path.expanduser(INSTALL_PATH)
+    FULL_PATH = "{}{}".format(PATH, "genpwd")
+    # make sure ~/.local/bin exists
+    if not os.path.exists(PATH):
+        os.makedirs(PATH)
+    if os.path.exists(FULL_PATH):
+        print("{}{} exists. Already installed?".format(INSTALL_PATH, "genpwd"))
+    else:
+        shutil.copy(sys.argv[0], FULL_PATH)
+        print("Add this to your ~/.bashrc: 'export PATH=~/.local/bin/:$PATH'.")
+        print("Then restart your terminal session or run the command from last line.")
+
+
 if __name__ == "__main__":
-    run()
+    if len(sys.argv) == 2:
+        if sys.argv[1] == "--install":
+            install()
+    else:
+        run()

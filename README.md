@@ -11,6 +11,19 @@ cd genpwd
 ./genpwd
 ```
 
+## Installation
+Do the following if you want to add the **genpwd** command to bash.
+```
+git clone https://github.com/oompf/genpwd.git
+cd genpwd
+./genpwd --install
+```
+
+To uninstall, simply run:
+```
+rm ~/.local/bin/genpwd
+```
+
 ## How it works
 On first usage of this software a .genpwd file is created in your home directory which contains only some 512-byte randomness and **not** your passwords.
 To generate a password you must enter your **master password** and the service name, e.g. google.com, github.com, facebook.com etc.
