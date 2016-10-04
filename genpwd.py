@@ -10,6 +10,7 @@ DEFAULT_PWD_LENGTH = 14 # Length of password
 def get_random_base():
     return os.urandom(512)
 
+# calculates SHA-512 as integer
 def digest(msg):
     if type(msg) == str:
         msg = msg.encode('utf-8')
@@ -17,11 +18,13 @@ def digest(msg):
         msg = str(msg).encode('utf-8')
     return int(hashlib.sha512(msg).hexdigest(), 16)
 
+# calculates digest of two messages by xor-ing them
 def common_digest(msg1, msg2):
     msg1_d = digest(msg1)
     msg2_d = digest(msg2)
     return msg1_d ^ msg2_d
 
+# base 58 encoding
 def encode_digest(digest):
     encoded = ""
     if digest < 0:
