@@ -15,7 +15,7 @@ cd genpwd
 On first usage of this software a .genpwd file is created in your home directory which contains only some 512-byte randomness and **not** your passwords.
 To generate a password you must enter your **master password** and the service name, e.g. google.com, github.com, facebook.com etc.
 
-With a bit of mathematics, the algorithm always produces the same passwords without storing anything but 512-byte of randomness on your disk.
+With a bit of mathematics, the algorithm always produces the same passwords without storing anything but 512 byte of randomness on your disk.
 
 Keep this things in mind:
   * Use a free and open-source operating system (e.g. [Arch Linux](https://wwww.archlinux.org/)).
