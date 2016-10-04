@@ -36,6 +36,7 @@ def encode_digest(digest):
         encoded = "{}{}".format(ALPHABET[int(digest)], encoded)
     return encoded
 
+# writes secret file to ~/.genpwd
 def setup():
     base_secret = get_random_base()
     with open(SECRET_FILE, 'wb') as f:
