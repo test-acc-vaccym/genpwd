@@ -12,7 +12,7 @@ cd genpwd
 ```
 
 ## How it works
-On first usage of this software a .genpwd file is created which contains only some 512-byte randomness and **not** your passwords.
+On first usage of this software a .genpwd file is created in your home directory which contains only some 512-byte randomness and **not** your passwords.
 To generate a password you must enter your **master password** and the service name, e.g. google.com, github.com, facebook.com etc.
 
 With a bit of mathematics, the algorithm always produces the same passwords without storing them on your disk.

@@ -4,7 +4,7 @@ import os, os.path, hashlib, getpass
 
 ALPHABET = "123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ"
 BASE_COUNT = len(ALPHABET)
-SECRET_FILE = ".genpwd"
+SECRET_FILE = os.path.expanduser("~/.genpwd")
 DEFAULT_PWD_LENGTH = 14 # Length of password
 
 def get_random_base():
