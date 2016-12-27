@@ -19,6 +19,8 @@ cd genpwd
 ./genpwd --install
 ```
 
+If you want that your password is automatically copied to the clipboard please install [pyperclip](https://pypi.python.org/pypi/pyperclip)
+
 To uninstall, simply run:
 ```
 rm ~/.local/bin/genpwd

@@ -42,6 +42,7 @@ def setup():
     base_secret = get_random_base()
     with open(SECRET_FILE, 'wb') as f:
         f.write(base_secret)
+    os.chmod(SECRET_FILE, 0o400)
 
 # TODO: add special characters etc. so that most sites accept this password.
 def normalize_password(pre_password):
@@ -63,7 +64,18 @@ def run():
     # preliminary password
     pre_password = encode_digest(cmmn_digest)[:DEFAULT_PWD_LENGTH]
     password = normalize_password(pre_password)
-    print(password)
+
+    use_clipboard = True
+    try:
+        import pyperclip
+    except ImportError:
+        use_clipboard = False
+
+    if use_clipboard:
+        pyperclip.copy(password)
+        print("Password copied.")
+    else:
+        print(password)
 
 # installs genpwd to ~/.local/bin/genpwd
 def install():
