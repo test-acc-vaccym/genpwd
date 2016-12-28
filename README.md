@@ -1,5 +1,5 @@
 # genpwd
-A password manager (?) which does not store your passwords on disk and provides plausible deniability.
+A highly secure password manager and generator which does not store any of your passwords on disk.
 
 ## Dependencies
 * Python 3.x
@@ -19,7 +19,7 @@ cd genpwd
 ./genpwd --install
 ```
 
-If you want that your password is automatically copied to the clipboard please install [pyperclip](https://pypi.python.org/pypi/pyperclip)
+If you want that your password is automatically copied to the clipboard please install [pyperclip](https://pypi.python.org/pypi/pyperclip).
 
 To uninstall, simply run:
 ```
